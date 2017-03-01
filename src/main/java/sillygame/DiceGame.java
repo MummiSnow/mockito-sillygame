@@ -14,10 +14,10 @@ public class DiceGame {
   private int wonGames;
   private List<Dice> dices = new ArrayList();// = Arrays.asList(new Dice(),new Dice());
   private Printer printer;
-  public DiceGame() {
-    printer = new Printer();
-    dices.add(new Dice());
-    dices.add(new Dice());
+  public DiceGame(Printer p, Dice d1, Dice d2) {
+    printer = p;
+    dices.add(d1);
+    dices.add(d2);
  
   }
   
@@ -46,9 +46,9 @@ public class DiceGame {
     return result;
   }
   public static void main(String[] args) throws Exception {
-    DiceGame g = new DiceGame();
+    DiceGame g = new DiceGame(new Printer(),new Dice(),new Dice());
     g.setPlayer("Kurt");
-    g.setPlayer("Kurt");
+    g.startGame();
     System.out.println(g.roll());
     System.out.println(g.roll());
     System.out.println(g.roll());
